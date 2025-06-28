@@ -1,24 +1,286 @@
-<!-- 
-HTML Template for Missions, delete and replace with mission HTML
--->
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Gnius Club</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook Sesión 15: Slicing con AstroPrint</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-  <h1>
-    Playbook HTML Placeholder Template
-  </h1>
-  <p>
-    Replace with actual playbook code.
-  </p>
-  <script src="script.js"></script>
-</body>
 
+    <header>
+        <h1><span class="book-icon">📋</span> <strong>Playbook Sesión 15: Slicing con AstroPrint</strong></h1>
+        <div class="header-widgets">
+            <div class="timer-container">
+                <span id="timer">⏱️ 00:00</span>
+                <button id="startStop">Start</button>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle-input">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="activity-list">
+            <h2>Actividades</h2>
+            <ul>
+                <li><a href="#activity-0">📝</a></li>
+                <li><a href="#activity-1">1</a></li>
+                <li><a href="#activity-2">2</a></li>
+                <li><a href="#activity-3">3</a></li>
+                <li><a href="#activity-4">4</a></li>
+                <li><a href="#activity-5">5</a></li>
+            </ul>
+
+            <div class="sidebar-info">
+                <p>💡 Cada actividad está cuidadosamente diseñada para involucrar a los estudiantes.</p>
+                <p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <button id="toggle-dialogues">Mostrar todos los diálogos</button>
+
+            <!-- SECCIÓN "DE UN VISTAZO" (ANTES ACTIVITY-0) -->
+            <div class="activity-card" id="activity-0">
+                <h2><span class="book-icon">📝</span> De un Vistazo: Sesión Gnius</h2>
+                <p class="overview-subtitle">Resumen rápido de objetivos, materiales y preparación para el facilitador.</p>
+                <div class="overview-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50%;">Objetivos, Tácticas y Entregable</th>
+                                <th style="width: 50%;">Materiales Específicos y Preparación Previa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Objetivos:</strong>
+                                    <ul>
+                                        <li>Que los estudiantes aprendan a utilizar la plataforma web AstroPrint para el 'slicing' de sus modelos 3D.</li>
+                                        <li>Que comprendan y ajusten los parámetros de impresión fundamentales: Material, Calidad y Soportes.</li>
+                                        <li>Que generen un archivo G-code listo para imprimir, justificando sus decisiones de configuración.</li>
+                                    </ul>
+                                    <strong>Secuencia de Clase:</strong>
+                                    <ul>
+                                        <li><strong class="tactic-highlight">⚡Saludo Interactivo con IA:</strong> Activación y contextualización de la misión.</li>
+                                        <li><strong class="tactic-highlight">⚡"I Can Statement" + Desafío:</strong> Clarificación de objetivos y presentación del reto del día.</li>
+                                        <li><strong class="tactic-highlight">⚡AI GYM:</strong> Diálogo estratégico con Xolo para la conceptualización.</li>
+                                        <li><strong class="tactic-highlight">⚡Brain Spark:</strong> Ejecución técnica y práctica aumentada por la Dupla Dinámica.</li>
+                                        <li><strong class="tactic-highlight">⚡Gnius STORM:</strong> Showcase de prototipos, síntesis y reflexión.</li>
+                                    </ul>
+                                    <strong>Entregable Clave:</strong>
+                                    <ul>
+                                        <li>Un archivo .gcode generado en AstroPrint a partir de su modelo .STL.</li>
+                                        <li>Una sección en su brief de diseño titulada "Plan de Impresión (AstroPrint)", que incluye una captura de pantalla del slicing y la justificación de los parámetros elegidos.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <strong>Materiales Específicos:</strong>
+                                    <ul>
+                                        <li>Proyector o pantalla interactiva.</li>
+                                        <li>Conexión a internet estable.</li>
+                                        <li>Cuentas de **AstroPrint** para cada alumno.</li>
+                                        <li>Archivos .STL validados de la sesión anterior.</li>
+                                        <li>Chat "Agente Gnius" (Xolo) activo y funcionando.</li>
+                                        <li>Presentación de diapositivas (Diapositivas 1-11).</li>
+                                    </ul>
+                                    <strong>Preparación Previa para ESTA Sesión:</strong>
+                                    <ol>
+                                        <li><strong>Revisión de Misión (Interna):</strong>
+                                            <ul>
+                                                <li>Verificar que las cuentas de AstroPrint de los alumnos estén activas y funcionales.</li>
+                                                <li>Asegurar que Xolo y la conexión a internet funcionan correctamente.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Familiarización:</strong> Navegar por la interfaz de AstroPrint, especialmente la sección de 'slicing'. Entender dónde se configuran el Material, la Calidad y los Soportes.</li>
+                                        <li><strong>Preparación de Ejemplos:</strong> Tener un archivo STL listo en su propia cuenta de AstroPrint para demostrar en vivo el proceso de subida, configuración de los 3 parámetros clave y el proceso de 'slicing'.</li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- FIN DE LA SECCIÓN "DE UN VISTAZO" -->
+
+            <div class="activity-card" id="activity-1">
+                <h2>⚡ Actividad 1: Saludo de IA y Contexto ⏰ 3 minutos</h2>
+                <p>Introducir la sesión como el paso final del flujo digital: la traducción del diseño al lenguaje de la impresora a través de AstroPrint.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Bienvenida y Contexto de la Misión ⏰ 1 minuto</h3>
+                            <p>(Proyectar Diapositiva 2) El facilitador presenta AstroPrint como la plataforma para dirigir la producción.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Saludos. Han diseñado, validado y optimizado sus modelos. Tienen los archivos STL, el plano maestro. Hoy, daremos el paso final para comunicarnos con la impresora. Utilizaremos nuestra plataforma en la nube, **AstroPrint**, para traducir su diseño 3D al lenguaje de instrucciones que la máquina ejecutará, capa por capa. Es hora de convertirse en los directores de la producción.</p>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Activación de la IA ⏰ 2 minutos</h3>
+                            <p>El facilitador guía a los alumnos para que inicien su sesión de trabajo con Xolo.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Inicien su sesión: 'Hola Xolo, listo para la Misión 15', seguido de su nombre, perfil y gustos. Esperen su confirmación para comenzar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-2">
+                <h2>⚡ Actividad 2: "I Can Statement" y Presentación del Desafío ⏰ 7 minutos</h2>
+                <p>Presentar la plataforma AstroPrint, su función como 'slicer', y el desafío de configurar los parámetros de impresión.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Presentando AstroPrint y el Desafío del Slicing ⏰ 4 minutos</h3>
+                            <p>(Proyectar Diapositiva 3) El facilitador explica qué es AstroPrint y las decisiones clave que los estudiantes deberán tomar.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Hoy, dejaremos Onshape para entrar en nuestra herramienta de manufactura: AstroPrint. Su función principal es la de un 'slicer': tomará su archivo STL y lo laminará para generar el G-code. Dentro de AstroPrint, deberán elegir el material, la calidad y si necesitan o no 'soportes'. Cada decisión afecta el tiempo, la resistencia y el acabado. Su misión es navegar AstroPrint, configurar estos parámetros y generar el G-code, explicando el porqué de cada decisión.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Declaración del "I Can Statement" ⏰ 3 minutos</h3>
+                            <p>(Proyectar Diapositiva 4) El facilitador presenta el objetivo de aprendizaje de la sesión.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">El objetivo de hoy es eminentemente práctico. Al final de la sesión, podrán decir: <strong>'Yo puedo navegar la interfaz de AstroPrint, configurar los parámetros de slicing básicos para mi modelo y generar un archivo G-code, justificando mis elecciones de calidad, material y soportes.'</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-3">
+                <h2>⚡ Actividad 3: A.I. GYM (Guía de Configuración para AstroPrint) ⏰ 15 minutos</h2>
+                <p>Fase de diálogo con Xolo para entender el flujo de trabajo en AstroPrint y la lógica detrás de sus tres parámetros clave.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Flujo de Trabajo y Parámetros Clave ⏰ 8 minutos</h3>
+                            <p>(Proyectar Diapositiva 5) Los estudiantes consultan a Xolo sobre el flujo de trabajo en AstroPrint y los 3 parámetros fundamentales.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Entremos al A.I. GYM. Hoy Xolo es su experto en AstroPrint. Para entender el proceso, consúltenle: <strong>'Xolo, explícame el flujo de trabajo básico en AstroPrint y descríbeme los 3 parámetros clave que debo configurar: Material, Calidad y Soportes.'</strong> Para nuestros proyectos, usaremos siempre **PLA**.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: La IA Conceptual en el Proceso ⏰ 7 minutos</h3>
+                            <p>(Proyectar Diapositiva 6) El facilitador verbaliza la explicación de Xolo sobre la inteligencia que opera "detrás de cámaras" en el slicer.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Aunque AstroPrint simplifica las opciones, detrás hay mucha inteligencia. Cuando activan los 'soportes', la plataforma realiza un análisis geométrico para identificar voladizos, similar a lo que simulamos antes. Cuando eligen un 'Material', la plataforma ajusta docenas de sub-parámetros optimizados para ese polímero. Ustedes toman la decisión estratégica; la plataforma se encarga de la compleja implementación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-4">
+                 <h2>⚡ Actividad 4: Brain Spark (Generación y Justificación del G-code) ⏰ 10 minutos</h2>
+                <p>Fase de trabajo práctico para subir, configurar, laminar el modelo en AstroPrint y documentar el proceso.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Slicing y Justificación en AstroPrint ⏰ 10 minutos</h3>
+                            <p>(Proyectar Diapositiva 7) Los estudiantes ejecutan el flujo de trabajo completo en AstroPrint y documentan sus decisiones.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">Ahora, al Brain Spark. Tienen 10 minutos. Inicien sesión en AstroPrint y suban su archivo .STL. Abran el slicer y configuren los tres parámetros clave: Material (PLA), Calidad (ej. Normal) y Soportes (si son necesarios). Dialoguen con Xolo para validar y justificar sus decisiones. Luego, presionen 'Slice'. Finalmente, añadan la sección "Plan de Impresión" a su brief, incluyendo una captura de la vista previa del slicing y la justificación de sus parámetros. ¡Adelante!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activity-5">
+                <h2>⚡ Actividad 5: Gnius STORM (Cierre de Sesión) ⏰ 5 minutos</h2>
+                <p>Fase final para compartir los planes de impresión y reflexionar sobre las decisiones de producción.</p>
+                <div class="steps">
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 1: Think (Reflexión Individual) ⏰ 1 minuto</h3>
+                            <p>(Proyectar Diapositiva 8) El facilitador guía una reflexión sobre las decisiones tomadas en el slicer.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">
+                                     Tiempo. Observen su Plan de Impresión. Reflexionen: <strong>¿Qué tres decisiones clave tomaron (Material, Calidad, Soportes) y por qué? ¿Cómo influyó la estimación de tiempo en su elección de calidad?</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 2: Pair (Discusión en Parejas) ⏰ 2 minutos</h3>
+                            <p>Los estudiantes comparten sus pantallas de AstroPrint y explican sus decisiones de configuración.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">
+                                    En parejas, compartan sus pantallas mostrando su "Plan de Impresión" en AstroPrint. Expliquen a su compañero sus tres decisiones clave y su justificación.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-content">
+                            <h3>Paso 3: Share (Síntesis y Cierre) ⏰ 2 minutos</h3>
+                            <p>(Proyectar Diapositiva 9) El facilitador consolida la sesión, confirmando que los estudiantes están listos para fabricar.</p>
+                        </div>
+                        <div class="collapsible">
+                            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
+                            <div class="collapsible-content">
+                                <p class="dialogue assistant">
+                                    Han completado con éxito el último paso del flujo digital. Han navegado una plataforma de manufactura estándar y han traducido su diseño a un conjunto de instrucciones que la impresora puede entender. Han demostrado que pueden tomar decisiones informadas sobre los compromisos de producción. Tienen el G-code en sus manos. Están, sin duda alguna, listos para fabricar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
